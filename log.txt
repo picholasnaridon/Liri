@@ -23,3 +23,25 @@ Language(s): English, Mohawk
 Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
 Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
 
+
+=====  Movie Data ====
+Title: Mr. Nobody
+Year: 2009
+Internet Movie Database : 7.9/10
+Rotten Tomatoes : 66%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language(s): English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+
+=====  Movie Data ====
+Title: Avatar
+Year: 2009
+Internet Movie Database : 7.8/10
+Rotten Tomatoes : 83%
+Country: UK, USA
+Language(s): English, Spanish
+Plot: A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
+Actors: Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang
+
