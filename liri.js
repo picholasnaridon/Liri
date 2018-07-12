@@ -5,7 +5,7 @@ var Spotify = require('node-spotify-api');
 var Twitter = require('twitter');
 var request = require('request');
 var fs = require('fs');
-
+var logStream = fs.createWriteStream('log.txt', {'flags': 'a'});
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
@@ -15,43 +15,64 @@ var modifier = process.argv[3]
 
 getTweets = () => {
   client.get('statuses/user_timeline.json', {count: 20}, function(error, tweets, response) {
-    if (!error) {
-      console.log("My 20 most recent tweets:")
+   
+      var outputTweets = []
+
       tweets.forEach(tweet => {
-        console.log(tweet.text)
+        outputTweets.push(tweet.text)
       });
-    }
+
+      var output = 
+`
+==== MY Tweets ====
+${outputTweets.join("\n")}
+`
+
+      console.log(output)
+      logStream.write(output + "\n");
+
   });
 }
 
 getSong = (modifier) => {
   spotify.search({ type: 'track', query: modifier }, function(err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }  
-    console.log(`Artist: ${data.tracks.items[0].artists[0].name}`)
-    console.log(`Album: ${data.tracks.items[0].album.name}`)
-    console.log(`Track: ${data.tracks.items[0].name}`)
-    console.log(`Link: ${data.tracks.items[0].href}`)
+
+    var output = 
+`
+==== Song Data ====
+Artist: ${data.tracks.items[0].artists[0].name}
+Album: ${data.tracks.items[0].album.name}
+Track: ${data.tracks.items[0].name}
+Link: ${data.tracks.items[0].href}
+`
+    console.log(output)
+    logStream.write(output + "\n");
   })
 }
 
 
 getMovie = (modifier) => {
   request(`http://www.omdbapi.com/?apikey=${keys.omdb.key}&t=${modifier}`, function (error, response, body) {
+
     var response_data = JSON.parse(body); 
-    console.log(`Title: ${response_data.Title}`)
-    console.log(`Year: ${response_data.Year}`)
-    console.log(`${response_data.Ratings[0].Source} : ${response_data.Ratings[0].Value}`)
-    console.log(`${response_data.Ratings[1].Source} : ${response_data.Ratings[1].Value}`)
-    console.log(`Country: ${response_data.Country}`)
-    console.log(`Language(s): ${response_data.Language}`)
-    console.log(`Plot: ${response_data.Plot}`)
-    console.log(`Actors: ${response_data.Actors}`)
+    var  output =
+`
+=====  Movie Data ====
+Title: ${response_data.Title}
+Year: ${response_data.Year}
+${response_data.Ratings[0].Source} : ${response_data.Ratings[0].Value}
+${response_data.Ratings[1].Source} : ${response_data.Ratings[1].Value}
+Country: ${response_data.Country}
+Language(s): ${response_data.Language}
+Plot: ${response_data.Plot}
+Actors: ${response_data.Actors}
+`
+              
+    console.log(output)
+    logStream.write(output + "\n");
+
   });
 }
-
-
 
 execute = () => {
   switch (command){
@@ -83,3 +104,6 @@ execute = () => {
 }
 
 execute()
+
+
+
