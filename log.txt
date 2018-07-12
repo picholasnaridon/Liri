@@ -1,0 +1,25 @@
+  
+==== Song Data ====
+Artist: Ace of Base
+Album: The Sign (US Album) [Remastered]
+Track: The Sign
+Link: https://api.spotify.com/v1/tracks/0hrBpAOgrt8RXigk83LLNE
+
+
+==== Song Data ====
+Artist: The Beach Boys
+Album: Summer Days (And Summer Nights) [2001 - Remaster]
+Track: California Girls
+Link: https://api.spotify.com/v1/tracks/6bJuuCtXYiwOcKT9s8uRh8
+
+
+=====  Movie Data ====
+Title: Mr. Nobody
+Year: 2009
+Internet Movie Database : 7.9/10
+Rotten Tomatoes : 66%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language(s): English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+

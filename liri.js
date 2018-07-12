@@ -35,6 +35,9 @@ ${outputTweets.join("\n")}
 }
 
 getSong = (modifier) => {
+  if (!modifier){
+    modifier = "Sign Ace of Base"
+  }
   spotify.search({ type: 'track', query: modifier }, function(err, data) {
 
     var output = 
@@ -52,6 +55,9 @@ Link: ${data.tracks.items[0].href}
 
 
 getMovie = (modifier) => {
+  if (!modifier){
+    modifier = "Mr. Nobody"
+  }
   request(`http://www.omdbapi.com/?apikey=${keys.omdb.key}&t=${modifier}`, function (error, response, body) {
 
     var response_data = JSON.parse(body); 
